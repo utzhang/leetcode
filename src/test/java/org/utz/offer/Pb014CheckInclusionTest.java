@@ -10,6 +10,6 @@ class Pb014CheckInclusionTest {
     void checkInclusion() {
         Pb014CheckInclusion pb = new Pb014CheckInclusion();
         assertTrue(pb.checkInclusion("ab", "eidbaooo"));
-
+        assertFalse(pb.checkInclusion("horse", "ors"));
     }
 }

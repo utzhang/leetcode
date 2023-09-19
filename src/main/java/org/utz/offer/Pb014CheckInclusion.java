@@ -1,32 +1,32 @@
 package org.utz.offer;
 
 public class Pb014CheckInclusion {
+    // 判断s2是否包含s1的变位词
     public boolean checkInclusion(String s1, String s2) {
         if (s1.length() > s2.length()) {
             return false;
         }
-        int[] count = new int[26];
+        // s1 和 s2 仅包含小写字母
+        int[] countMap = new int[26];
         for (int i = 0; i < s1.length(); i++) {
-            count[s1.charAt(i) - 'a']++;
-            count[s2.charAt(i) - 'a']--;
+            countMap[s1.charAt(i) - 'a']++;
         }
-        if (allValueZero(count)) {
-            return true;
+        for (int i = 0; i < s1.length() - 1; i++) {
+            countMap[s2.charAt(i) - 'a']--;
         }
-        // 右指针在 i
-        for (int i = s1.length(); i < s2.length(); i++) {
-            count[s2.charAt(i) - 'a']--;
-            count[s2.charAt(i - s1.length()) - 'a']++;
-            if (allValueZero(count)) {
+        for (int j = s1.length() - 1; j < s2.length(); j++) {
+            countMap[s2.charAt(j) - 'a']--;
+            if (allValueZero(countMap)) {
                 return true;
             }
+            countMap[s2.charAt(j - s1.length() + 1) - 'a']++;
         }
         return false;
     }
 
-    private boolean allValueZero(int[] count) {
-        for (int i = 0; i < count.length; i++) {
-            if (count[i] != 0) {
+    private boolean allValueZero(int[] countMap) {
+        for (int num : countMap) {
+            if (num != 0) {
                 return false;
             }
         }
