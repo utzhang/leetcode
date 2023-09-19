@@ -10,5 +10,6 @@ class Pb009NumSubarrayProductLessThanKTest {
     void numSubarrayProductLessThanK() {
         Pb009NumSubarrayProductLessThanK pb = new Pb009NumSubarrayProductLessThanK();
         assertEquals(8, pb.numSubarrayProductLessThanK(new int[]{10, 5, 2, 6}, 100));
+        assertEquals(3, pb.numSubarrayProductLessThanK(new int[]{10, 5}, 100));
     }
 }

@@ -9,10 +9,10 @@ public class Pb012PivotIndex {
 
         int sum2 = 0;
         for (int i = 0; i < nums.length; i++) {
-            sum2 += nums[i];
-            if (sum2 - nums[i] == sum - sum2) {
+            if (sum2 * 2 == sum - nums[i]) {
                 return i;
             }
+            sum2 += nums[i];
         }
         return -1;
     }
