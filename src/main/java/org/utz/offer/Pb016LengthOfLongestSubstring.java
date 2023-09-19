@@ -16,7 +16,7 @@ public class Pb016LengthOfLongestSubstring {
                 count[s.charAt(left)]--;
                 left++;
             }
-            maxLength = Math.max(right - left + 1, maxLength);
+            maxLength = Math.max(maxLength, right - left + 1);
         }
         return maxLength;
     }
