@@ -10,5 +10,6 @@ class Pb18IsPalindromeTest {
     void isPalindrome() {
         Pb018IsPalindrome pb = new Pb018IsPalindrome();
         assertTrue(pb.isPalindrome("A man, a plan, a canal: Panama"));
+        assertTrue(pb.isPalindrome(".,"));
     }
 }
